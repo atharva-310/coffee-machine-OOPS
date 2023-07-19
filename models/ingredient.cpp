@@ -2,6 +2,12 @@
 
 using namespace std;
 
+/**
+ * Ingredient
+ * used to create instances of all the ingridents and it's cost
+*/
+
+
 class Ingredient {
 
     private: 

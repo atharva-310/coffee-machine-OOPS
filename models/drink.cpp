@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 #include "recipe.cpp"
 
+/**
+ * Drink
+ * instances of the drink class will be used in the menu of coffeemachine 
+ * 
+ * calculateCost : calcuates the cost of the drink based on the recipe 
+*/
 
 using namespace std;
 

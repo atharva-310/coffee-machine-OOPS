@@ -2,6 +2,21 @@
 #include "drink.cpp"
 using namespace std;
 
+/**
+ * CoffeeMachine
+ * 
+ * Methods
+ * Private:
+ * - isAvailable  @param(Drink * drink) : will check whether all the ingredients of drink are available in stock
+ * - consume      @param(Drink * drink) : Will consume all ingredients
+ * - processDrink @param(Drink * drink) : uses the above method to process the ordered beverage
+ * 
+ * Public:
+ * - refillStock  : refill the the stock back to it's capacity
+ * - displayMenu  : diaplay menu of all the beverages 
+ * - printStock   : Display all ingredients stock
+*/
+
 class CoffeeMachine {
     private: 
         map<Ingredient*,int> stock, capacity;

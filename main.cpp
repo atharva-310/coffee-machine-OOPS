@@ -4,6 +4,7 @@
 using namespace std;
 
 int main() {
+    // Create ingredients and create map to intialize the capacity of system
     Ingredient milk("Milk", 10), coffee_bean("Coffee Bean", 10), sugar("Sugar",4), cream("Cream",20);
 
     map<Ingredient*,int> capacity;
@@ -12,6 +13,12 @@ int main() {
     capacity[&coffee_bean] = 20;
     capacity[&cream] = 10;
 
+    /**
+     * Creating Drink
+     * - map required required ingredient for each drink's receipe 
+     * - Create Recipe object based on required ingredients
+     * - use recipe to create drink object
+    */
     map<Ingredient*, int> coffeeIngredients, creamCoffeeIngredients;
     coffeeIngredients[&milk] = 3;
     coffeeIngredients[&sugar] = 2;
@@ -25,12 +32,15 @@ int main() {
     Recipe coffeeRecipe(coffeeIngredients), creamCoffeeRecipe(creamCoffeeIngredients);
     Drink normalCoffee("Coffee", &coffeeRecipe ), creamCoffee("Cream Coffee",&creamCoffeeRecipe);
 
+    // create menu vector 
     vector<Drink*> menu;
     menu.push_back((&normalCoffee));
     menu.push_back((&creamCoffee));
 
+    
     CoffeeMachine coffeeMachine(capacity,menu);
 
+    // User Interface for the coffee maker
     int choice;
     do {
         cout << "-----------------------------------------\n";
@@ -64,4 +74,5 @@ int main() {
     } while (choice != 4);
 
 
+    return 0;
 }
